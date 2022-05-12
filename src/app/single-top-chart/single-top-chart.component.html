@@ -1,0 +1,12 @@
+<p>single-top-chart works!</p>
+<form>
+    <label for="file-input">Select a Module Summaries csv file:</label>
+    <input type="file" onchange="readSingleFile(this)" id="file-input" />
+</form>
+<hr hidden />
+<div id="chartContainer" style="width:100%; height:400px;"></div>
+<br/>
+<hr hidden />
+<h3 id="file-content-header" hidden>File content:</h3>
+<pre id="file-content"></pre>
+<div #svgContainer></div>
