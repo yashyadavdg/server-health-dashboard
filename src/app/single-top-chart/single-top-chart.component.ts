@@ -27,8 +27,8 @@ export class SingleTopChartComponent implements OnInit {
   @Input() innerPadding = 0.1;
   @Input() outerPadding = 0.1;
   @Input() seriesInnerPadding = 0.1;
-  @Input() domain = [0, 1000];
-  @Input() barColors = ['#00aeef', '#f98e2b', '#7C77AD'];
+  @Input() domain = [0, 100];
+  @Input() barColors = ['#00aeef', '#f98e2b', '#7C77AD', '#345354', '#861d21'];
 
   public svg!: d3.Selection<SVGGElement, unknown, null, undefined>;
   public isRendered = false;
@@ -38,31 +38,20 @@ export class SingleTopChartComponent implements OnInit {
   constructor() {
     this.data = [
       {
-        name: 'Row1',
+        name: 'top stats 1',
         series: [
-          { name: 'Bar1', value: 150 },
-          { name: 'Bar2', value: 200 }
-        ],
-      },
-      {
-        name: 'Row2',
-        series: [
-          { name: 'Bar1', value: 300 },
-          { name: 'Bar2', value: 400 }
-        ],
-      },
-      {
-        name: 'Row3',
-        series: [
-          { name: 'Bar1', value: 500 },
-          { name: 'Bar2', value: 1000 }
+          { name: 'Postgres', value: 56.2 },
+          { name: 'stats.sh', value: 37.5 },
+          { name: 'ethstats.pl', value: 12.5 },
+          { name: 'polkitd', value: 6.2 },
+          { name: 'top', value: 6.2 }
         ],
       }
     ];
   }
   @HostListener('window:resize')
   onResize() {
-    this.createChart();
+    //this.createChart();
   }
 
   ngOnChanges(changes: SimpleChanges) {

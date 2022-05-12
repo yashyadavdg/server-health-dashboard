@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SingleTopChartComponent } from './single-top-chart/single-top-chart.component';
+import { ReadCsvSingleComponent } from './read-csv-single/read-csv-single.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SingleTopChartComponent
+    SingleTopChartComponent,
+    ReadCsvSingleComponent
   ],
   imports: [
     BrowserModule,

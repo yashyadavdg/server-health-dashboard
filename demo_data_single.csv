@@ -1,0 +1,7 @@
+USER, %CPU, %MEM, TIME+, COMMAND
+postgres, 56.2, 1.8, 168:57.03, postgres
+root, 37.5, 0.0, 0:00.06, stats.sh
+root, 12.5, 0.0, 0:00.03, ethstats.pl
+polkitd, 6.2, 0.1, 7:27.04, polkitd
+root, 6.2, 0.0, 0:00.01, top
+postgres, 6.2, 1.8, 126:41.57, postgres
