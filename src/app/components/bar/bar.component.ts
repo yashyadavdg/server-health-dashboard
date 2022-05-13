@@ -72,7 +72,7 @@ export class BarComponent implements OnInit {
       .attr("y", (d: { Use: d3.NumberValue; }) => y(d.Use))
       .attr("width", x.bandwidth())
       .attr("height", (d: { Use: d3.NumberValue; }) => this.height - y(d.Use))
-      .attr("fill", "#5a6782");
+      .attr("fill", "#f98e2b");
   }
 
 }
