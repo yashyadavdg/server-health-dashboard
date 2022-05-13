@@ -4,7 +4,7 @@ import cpuinfo from "../../db/cpuinfo.json";
 import * as d3Scale from 'd3-scale';
 import * as d3Shape from 'd3-shape';
 import * as d3Axis from 'd3-axis';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';  
+import { FormBuilder, Validators} from '@angular/forms';  
 
 @Component({
     selector: 'app-cpuusage',
@@ -20,7 +20,6 @@ export class CpuusageComponent implements OnInit {
     private svg: any;
     private htmlElement: HTMLElement;
     public data: number[] = [];
-    public ilabel:string = "logd";
 
     private margin = { top: 10, right: 10, bottom: 15, left: 25 };
     public width: number;
@@ -40,7 +39,7 @@ export class CpuusageComponent implements OnInit {
     constructor(public elRef: ElementRef,
         public fb: FormBuilder) {
         this.htmlElement = this.elRef.nativeElement;
-        this.chartData = { data: [], locationName: '' };
+        this.chartData = { data: [] };
         this.activeField = 0;
     }
 
@@ -103,16 +102,15 @@ export class CpuusageComponent implements OnInit {
    * @param obsData
    */
   public updateGraphData(): void {
-    // console.log('LineChartComponent:updateGraphData');
-    // Iterate to the next set of available data
-    // this.activeField = this.dataFields.indexOf(e.target.value);
 
     // Remove the current line form the chart
     this.clearChartData();
+
+    this.data = [];
     
-    // Build the data array for chart where the values of 
-    // interest are put date and value fields
     this.data = this.buildChartData();
+
+    console.log(this.data)
 
     // Configuring line path
     this.configureXaxis();
@@ -122,12 +120,19 @@ export class CpuusageComponent implements OnInit {
     this.drawLineAndPath();
   }
 
+  public updateGraphData1(): void {
+
+    // Remove the current line form the chart
+    this.clearChartData();
+    
+  }
+
   /**
    * Removes all lines and axis from the chart so we can
    * create new ones based on the data
    */
   private clearChartData(): void {
-    // console.log('LineChartComponent:clearChartData');
+    console.log('LineChartComponent:clearChartData');
     if (this.chartData !== null
       && this.chartData.data.length > 0) {
       this.svg.selectAll('g').remove();
@@ -142,7 +147,7 @@ export class CpuusageComponent implements OnInit {
    * value property
    */
   private buildChartData(): any[] {
-    console.log(this.activeField);
+    // console.log(this.activeField);
     let data: any = [];
     if (this.chartData != null
       && this.chartData.data != null) {
@@ -268,8 +273,8 @@ export class CpuusageComponent implements OnInit {
             ticky = 10;
         }
 
-        if (value !== null) {
-          data.push(
+        if (value !== null && value !== '' && d.time !== '') {
+            data.push(
             {
               time: d.time,
               value: value
@@ -287,15 +292,12 @@ export class CpuusageComponent implements OnInit {
    * Configures the Y-axis based on the data values
    */
   private configureYaxis(): void {
+    console.log('LineChartComponent:configureYaxis');
     // range of data configuring
     let yRange: any[] = [0,this.yheight];
     // If we have data then make the Y range one less than the
     // smallest value so we have space between the bottom-most part
     // of the line and the X-axis
-    if (yRange && yRange.length > 1
-      && yRange[0] !== yRange[yRange.length - 1]) {
-      yRange[0] -= 1;
-    }
     this.y = d3Scale.scaleLinear()
       .range([this.height, 0])
       .domain(yRange);
@@ -311,12 +313,12 @@ export class CpuusageComponent implements OnInit {
    * Configures the X-axis based on the time series
    */
   private configureXaxis(): void {
-    // console.log('LineChartComponent:configureXaxis');
+    console.log('LineChartComponent:configureXaxis');
     // range of data configuring, in this case we are
     // showing data over a period of time
     this.x = d3Scale.scaleTime()
       .range([0, this.width])
-      .domain([1,60]);
+      .domain([1,50]);
 
     // Add the X-axis definition to the bottom of the chart
     this.svg.append('g')
@@ -329,12 +331,24 @@ export class CpuusageComponent implements OnInit {
    * Configures and draws the line on the graph
    */
   private drawLineAndPath() {
-    // console.log('LineChartComponent:drawLineAndPath');
+    console.log('LineChartComponent:drawLineAndPath');
+    // console.log(this.data)
     // Create a line based on the X and Y values (date and value)
     // from the data
     this.line = d3Shape.line()
       .x((d: any) => this.x(d.time))
       .y((d: any) => this.y(d.value));
+
+      this.svg.append("path")
+      .datum(this.data)
+      .attr("fill", "#69b3a2")
+      .attr("fill-opacity", .3)
+      .attr("stroke", "none")
+      .attr("d", d3.area()
+        .x((d: any) => this.x(d.time))
+        .y0( this.height )
+        .y1((d: any) => this.y(d.value))
+        )
 
     // Configure the line's look and data source
     this.svg.append('path')

@@ -9,7 +9,7 @@ import { ScatterComponent } from './components/scatter/scatter.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CpuusageComponent } from './components/cpuusage/cpuusage.component';
 import { MemusageComponent } from './components/memusage/memusage.component';
-import { DemonsstatusComponent } from './demonsstatus/demonsstatus.component';
+import { StatusComponent } from './components/status/status.component'
 
 @NgModule({
   declarations: [
@@ -20,12 +20,12 @@ import { DemonsstatusComponent } from './demonsstatus/demonsstatus.component';
     DashboardComponent,
     CpuusageComponent,
     MemusageComponent,
-    DemonsstatusComponent
+    StatusComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

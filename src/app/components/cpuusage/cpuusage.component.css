@@ -22,7 +22,6 @@ button {
   @media (min-height: 500px) {
     svg {
       height: 400px;
-      width: 800px;
     }
   }
   @media (min-height: 750px) {

@@ -1,0 +1,16 @@
+<div class="content">
+
+    <div>
+        <h3>Daemon status</h3>
+    </div>
+
+    <ol class="list-group list-group-light list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let suit of data">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{suit.process}}</div>
+            </div>
+            <span class="badge rounded-pill" [class]="suit.status">{{suit.status}}</span>
+        </li>
+    </ol>
+
+</div>

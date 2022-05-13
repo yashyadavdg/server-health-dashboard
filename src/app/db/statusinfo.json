@@ -1,0 +1,126 @@
+[
+  {
+    "process": "pmd",
+    "status": "running"
+  },
+  {
+    "process": "postfix_forward",
+    "status": "inactive"
+  },
+  {
+    "process": "postfix_reroute",
+    "status": "inactive"
+  },
+  {
+    "process": "mipsvcd",
+    "status": "dead"
+  },
+  {
+    "process": "postgresql",
+    "status": "running"
+  },
+  {
+    "process": "events",
+    "status": "running"
+  },
+  {
+    "process": "evlogger",
+    "status": "running"
+  },
+  {
+    "process": "netconfd",
+    "status": "running"
+  },
+  {
+    "process": "syscfgd",
+    "status": "running"
+  },
+  {
+    "process": "hms",
+    "status": "running"
+  },
+  {
+    "process": "logd",
+    "status": "running"
+  },
+  {
+    "process": "mipd",
+    "status": "running"
+  },
+  {
+    "process": "connectord",
+    "status": "running"
+  },
+  {
+    "process": "dgsyncd",
+    "status": "running"
+  },
+  {
+    "process": "userd",
+    "status": "running"
+  },
+  {
+    "process": "inspectd",
+    "status": "running"
+  },
+  {
+    "process": "ocrd",
+    "status": "running"
+  },
+  {
+    "process": "pbed",
+    "status": "running"
+  },
+  {
+    "process": "mailfiltd",
+    "status": "running"
+  },
+  {
+    "process": "pfed",
+    "status": "running"
+  },
+  {
+    "process": "icapd",
+    "status": "running"
+  },
+  {
+    "process": "stunnel",
+    "status": "running"
+  },
+  {
+    "process": "workflowd",
+    "status": "running"
+  },
+  {
+    "process": "multisyncd",
+    "status": "running"
+  },
+  {
+    "process": "remed",
+    "status": "running"
+  },
+  {
+    "process": "eventsyncd",
+    "status": "running"
+  },
+  {
+    "process": "contentd",
+    "status": "running"
+  },
+  {
+    "process": "discoveryd",
+    "status": "running"
+  },
+  {
+    "process": "tomcat",
+    "status": "running"
+  },
+  {
+    "process": "clientmgr",
+    "status": "running"
+  },
+  {
+    "process": "lighttpd",
+    "status": "running"
+  }
+]

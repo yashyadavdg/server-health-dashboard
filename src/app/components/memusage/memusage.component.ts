@@ -20,7 +20,6 @@ export class MemusageComponent implements OnInit {
     private svg: any;
     private htmlElement: HTMLElement;
     public data: number[] = [];
-    public ilabel:string = "logd";
 
     private margin = { top: 10, right: 10, bottom: 15, left: 25 };
     public width: number;
@@ -41,7 +40,7 @@ export class MemusageComponent implements OnInit {
         public fb: FormBuilder) {
         this.htmlElement = this.elRef.nativeElement;
         this.chartData = { data: [], locationName: '' };
-        this.activeField = 0;
+        this.activeField = 14;
     }
 
     ngOnInit(): void {
@@ -155,7 +154,7 @@ export class MemusageComponent implements OnInit {
         if (this.activeField === 0){
           value = d.logd;
           tickx = 54;
-          ticky = 10;
+          ticky = 2;
         }
         else if (this.activeField === 1){
           value = d.workflowd;
@@ -268,7 +267,7 @@ export class MemusageComponent implements OnInit {
             ticky = 10;
         }
 
-        if (value !== null) {
+        if (value !== null && value !== '' && d.time !== '') {
           data.push(
             {
               time: d.time,
@@ -289,13 +288,7 @@ export class MemusageComponent implements OnInit {
   private configureYaxis(): void {
     // range of data configuring
     let yRange: any[] = [0,this.yheight];
-    // If we have data then make the Y range one less than the
-    // smallest value so we have space between the bottom-most part
-    // of the line and the X-axis
-    if (yRange && yRange.length > 1
-      && yRange[0] !== yRange[yRange.length - 1]) {
-      yRange[0] -= 1;
-    }
+
     this.y = d3Scale.scaleLinear()
       .range([this.height, 0])
       .domain(yRange);
@@ -335,6 +328,17 @@ export class MemusageComponent implements OnInit {
     this.line = d3Shape.line()
       .x((d: any) => this.x(d.time))
       .y((d: any) => this.y(d.value));
+
+      this.svg.append("path")
+      .datum(this.data)
+      .attr("fill", "#69b3a2")
+      .attr("fill-opacity", .3)
+      .attr("stroke", "none")
+      .attr("d", d3.area()
+        .x((d: any) => this.x(d.time))
+        .y0( this.height )
+        .y1((d: any) => this.y(d.value))
+        )
 
     // Configure the line's look and data source
     this.svg.append('path')

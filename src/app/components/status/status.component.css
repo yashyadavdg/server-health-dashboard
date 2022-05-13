@@ -1,0 +1,15 @@
+.running {
+    background-color: green;
+}
+
+.inactive {
+    background-color: orange;
+}
+
+.dead {
+    background-color: red;
+}
+
+.list-group-item:hover {
+    font-weight:700;
+}
