@@ -12,8 +12,8 @@ export class BarComponent implements OnInit {
   private data = vol;
 
   private svg: any;
-  private margin = 90;
-  private width = 500 - (this.margin * 2);
+  private margin = 100;
+  private width = 700 - (this.margin * 2);
   private height = 400 - (this.margin * 2);
 
   constructor() { }

@@ -1,6 +1,6 @@
 button {
     font-weight: 400;
-    height: 25px;
+    padding: 5px;
     border: 0ch;
   }
   
@@ -14,9 +14,10 @@ button {
     width: 95%;
   }
   
-  
   svg {
-      width: 95%;
+    display: block;
+    margin: 0 auto;
+    width: 95%;
   }
   
   @media (min-height: 500px) {

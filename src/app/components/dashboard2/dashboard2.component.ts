@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-dashboard2',
+  templateUrl: './dashboard2.component.html',
+  styleUrls: ['./dashboard2.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class Dashboard2Component implements OnInit {
 
-  showtab = 0;
-
-  constructor() { }
-
+  constructor() {
+    this.showtab = 0;
+   }
+  showtab = -1;
   ngOnInit(): void {
   }
 
-  openCity(tabName: string): void {
+  changeTab(tabName: string): void {
     switch (tabName) {
       case "cpuusage" : this.showtab = 0; break;
       case "memusage" : this.showtab = 4; break;
@@ -22,5 +22,6 @@ export class DashboardComponent implements OnInit {
       case "crashes" : this.showtab = 3; break;
       default: this.showtab = -1; break;
     }
+    console.log("Tab: " + this.showtab);
   }
 }

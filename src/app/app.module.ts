@@ -9,7 +9,8 @@ import { ScatterComponent } from './components/scatter/scatter.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CpuusageComponent } from './components/cpuusage/cpuusage.component';
 import { MemusageComponent } from './components/memusage/memusage.component';
-import { StatusComponent } from './components/status/status.component'
+import { StatusComponent } from './components/status/status.component';
+import { Dashboard2Component } from './components/dashboard2/dashboard2.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StatusComponent } from './components/status/status.component'
     DashboardComponent,
     CpuusageComponent,
     MemusageComponent,
-    StatusComponent
+    StatusComponent,
+    Dashboard2Component
   ],
   imports: [
     BrowserModule,

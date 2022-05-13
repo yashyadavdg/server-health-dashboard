@@ -1,0 +1,35 @@
+<div class="content">
+    <div class="row">
+        <div id="dcolstatus" class="col-3 box-shadow">
+            <app-status></app-status>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="tab">
+                    <button class="tablinks"
+                        (click)="changeTab('cpuusage')">CPU Usage</button>
+                    <button class="tablinks"
+                        (click)="changeTab('memusage')">Memory Usage</button>
+                    <button class="tablinks"
+                        (click)="changeTab('storage')">Storage</button>
+                    <button class="tablinks"
+                        (click)="changeTab('crashes')">Crashes</button>
+                </div>
+            </div>
+            <div class="row" [ngSwitch]="showtab">
+                <div class="col-12 box-shadow" *ngSwitchCase="2">
+                    <app-bar></app-bar>
+                </div>
+                <div class="col-12 box-shadow" *ngSwitchCase="3">
+                    <app-pie></app-pie>
+                </div>
+                <div class="col-12 box-shadow" *ngSwitchCase="0">
+                    <app-cpuusage></app-cpuusage>
+                </div>
+                <div class="col-12 box-shadow" *ngSwitchCase="4">
+                    <app-memusage></app-memusage>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

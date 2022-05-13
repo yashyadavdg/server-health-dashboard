@@ -8,7 +8,7 @@ import * as d3 from 'd3';
 })
 export class PieComponent implements OnInit {
 
-  private data = [{"Process" : "pfed", "crashes" : "143"},
+  data = [{"Process" : "pfed", "crashes" : "143"},
   {"Process" : "discoveryd", "crashes" : "1"},
   {"Process" : "mipsvcd", "crashes" : "27"},
   {"Process" : "pbed", "crashes" : "245"}];
@@ -62,14 +62,15 @@ export class PieComponent implements OnInit {
       )
       .attr('fill', (d: any, i: any) => (this.colors(i)))
       .attr("stroke", "#121926")
-      .style("stroke-width", "1px");
+      .style("stroke-width", "1px")
+      .style("display", "block");
 
     // Add labels 
     const labelLocation = d3.arc()
       .innerRadius(100)
       .outerRadius(this.radius);
 
-    this.svg
+      this.svg
       .selectAll('pieces')
       .data(pie(this.data))
       .enter()
