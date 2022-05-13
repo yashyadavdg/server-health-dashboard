@@ -1,0 +1,66 @@
+[
+    {
+        "Filesystem": "devtmpfs",
+        "Use": "0"
+    },
+    {
+        "Filesystem": "tmpfs",
+        "Use": "1"
+    },
+    {
+        "Filesystem": "tmpfs",
+        "Use": "10"
+    },
+    {
+        "Filesystem": "tmpfs",
+        "Use": "0"
+    },
+    {
+        "Filesystem": "/dev/sda2",
+        "Use": "36"
+    },
+    {
+        "Filesystem": "/dev/sda1",
+        "Use": "52"
+    },
+    {
+        "Filesystem": "/dev/sda7",
+        "Use": "1"
+    },
+    {
+        "Filesystem": "/dev/sda3",
+        "Use": "3"
+    },
+    {
+        "Filesystem": "/dev/dlp_vg-cgn",
+        "Use": "3"
+    },
+    {
+        "Filesystem": "/dev/dlp_vg-postfix",
+        "Use": "1"
+    },
+    {
+        "Filesystem": "/dev/dlp_vg-pgsql",
+        "Use": "1"
+    },
+    {
+        "Filesystem": "/dev/dlp_vg-info",
+        "Use": "16"
+    },
+    {
+        "Filesystem": "/dev/dlp_vg-agent",
+        "Use": "2"
+    },
+    {
+        "Filesystem": "/dev/sda5",
+        "Use": "1"
+    },
+    {
+        "Filesystem": "tmpfs",
+        "Use": "0"
+    },
+    {
+        "Filesystem": "tmpfs",
+        "Use": "0"
+    }
+]

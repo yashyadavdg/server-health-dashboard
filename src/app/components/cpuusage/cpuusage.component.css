@@ -1,0 +1,38 @@
+button {
+    font-weight: 400;
+    height: 25px;
+    border: 0ch;
+  }
+  
+  label {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+  
+  .chart-container {
+    display: inline-block;
+    width: 95%;
+  }
+  
+  
+  svg {
+      width: 95%;
+  }
+  
+  @media (min-height: 500px) {
+    svg {
+      height: 400px;
+      width: 800px;
+    }
+  }
+  @media (min-height: 750px) {
+    svg {
+      height: 500px;
+    }
+  }
+  @media (min-height: 1000px) {
+    svg {
+      height: 800px;
+    }
+  }
+  

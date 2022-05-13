@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SingleTopChartComponent } from './single-top-chart/single-top-chart.component';
-import { ReadCsvSingleComponent } from './read-csv-single/read-csv-single.component';
+import { BarComponent } from './components/bar/bar.component'
+import { PieComponent } from './components/pie/pie.component';
+import { ScatterComponent } from './components/scatter/scatter.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CpuusageComponent } from './components/cpuusage/cpuusage.component';
+import { MemusageComponent } from './components/memusage/memusage.component';
+import { DemonsstatusComponent } from './demonsstatus/demonsstatus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SingleTopChartComponent,
-    ReadCsvSingleComponent
+    BarComponent,
+    PieComponent,
+    ScatterComponent,
+    DashboardComponent,
+    CpuusageComponent,
+    MemusageComponent,
+    DemonsstatusComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+<h4>CPU Usage </h4>
+<div class="chart-card">
+
+  <form [formGroup]="oppoSuitsForm" (ngSubmit)="onSubmit()">
+    <select formControlName="name">
+      <option *ngFor="let suit of dataFields">{{suit}}</option>
+    </select>
+    <div class="error-block" *ngIf="submitted && handleError('name', 'required')">
+      You must provide a value!
+    </div>
+    <button>Submit</button>
+  </form>
+
+  <div>
+
+    <br />
+    <svg class="svg-chart" id="{{chartData.locationName}}">
+
+    </svg>
+  </div>
+</div>
